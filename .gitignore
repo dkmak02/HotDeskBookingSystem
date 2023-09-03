@@ -1,0 +1,6 @@
+﻿################################################################################
+# Ten plik .gitignore został utworzony automatycznie przez Microsoft(R) Visual Studio.
+################################################################################
+
+/Hot desk booking system/appsettings.Development.json
+/Hot desk booking system/appsettings.json
