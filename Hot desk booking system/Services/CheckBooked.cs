@@ -57,7 +57,7 @@ public class CheckBooked : ICheckBooked
         var bookings = await _mongo.Conn<BookingModel>("bookings")
             .Find(x => x.DeskId == deskId && x.To > DateTime.UtcNow)
             .ToListAsync();
-        var booking = bookings.FirstOrDefault(x => x.From < from && x.To > to);
+        var booking = bookings.FirstOrDefault(x => x.From <= from && x.To >= to);
         var user = _mongo.Conn<UserModel>("users").Find(x => x.Id == booking.UserId).FirstOrDefaultAsync();
         if (user.Result != null)
         {
